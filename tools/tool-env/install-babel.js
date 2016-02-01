@@ -39,6 +39,9 @@ global.Promise = require('meteor-promise');
 // Allow all Promise callbacks to be run in a Fiber.
 global.Promise.Fiber = require('fibers');
 
+// Verify that the babel-runtime package is available to be required.
+require('babel-runtime/helpers/typeof');
+
 // Include helpers from NPM so that the compiler doesn't need to add boilerplate
 // at the top of every file
 require('meteor-babel').installRuntime();
